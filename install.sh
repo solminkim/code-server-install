@@ -236,7 +236,8 @@ main() {
   # releases in order to download and unpack the right release.
   CACHE_DIR=$(echo_cache_dir)
   STANDALONE_INSTALL_PREFIX=${STANDALONE_INSTALL_PREFIX:-$HOME/.local}
-  VERSION=${VERSION:-$(echo_latest_version)}
+  VERSION=4.96.4
+  # VERSION=${VERSION:-$(echo_latest_version)}
   # These can be overridden for testing but shouldn't normally be used as it can
   # result in a broken code-server.
   OS=${OS:-$(os)}
@@ -370,7 +371,7 @@ install_rpm() {
   echoh "Installing v$VERSION of the $ARCH rpm package from GitHub."
   echoh
 
-  fetch "https://github.com/coder/code-server/releases/download/v$VERSION/code-server-$VERSION-$ARCH.rpm" \
+  fetch "https://github.com/coder/code-server/releases/download/v4.96.4/code-server-4.96.4-amd64.rpm" \
     "$CACHE_DIR/code-server-$VERSION-$ARCH.rpm"
   sudo_sh_c rpm -U "$CACHE_DIR/code-server-$VERSION-$ARCH.rpm"
 
@@ -396,7 +397,7 @@ install_standalone() {
   echoh "Installing v$VERSION of the $ARCH release from GitHub."
   echoh
 
-  fetch "https://github.com/coder/code-server/releases/download/v$VERSION/code-server-$VERSION-$OS-$ARCH.tar.gz" \
+  fetch "https://github.com/coder/code-server/releases/download/v4.96.4/code-server-4.96.4-linux-amd64.tar.gz" \
     "$CACHE_DIR/code-server-$VERSION-$OS-$ARCH.tar.gz"
 
   # -w only works if the directory exists so try creating it first. If this
