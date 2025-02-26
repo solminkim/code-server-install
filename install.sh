@@ -359,7 +359,7 @@ install_deb() {
   echoh "Installing v$VERSION of the $ARCH deb package from GitHub."
   echoh
 
-  fetch "https://github.com/coder/code-server/releases/download/v$VERSION/code-server_${VERSION}_$ARCH.deb" \
+  fetch "https://github.com/coder/code-server/releases/download/v4.96.4/code-server_4.96.4_amd64.deb" \
     "$CACHE_DIR/code-server_${VERSION}_$ARCH.deb"
   sudo_sh_c dpkg -i "$CACHE_DIR/code-server_${VERSION}_$ARCH.deb"
 
